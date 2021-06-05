@@ -34,6 +34,7 @@ class ConcreteSubject implements Subject {
      * The subscription management methods.
      */
     public attach(observer: Observer): void {
+        // @ts-ignore
         const isExist = this.observers.includes(observer);
         if (isExist) {
             return console.log('Subject: Observer has been attached already.');

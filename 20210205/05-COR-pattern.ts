@@ -23,7 +23,9 @@ abstract class AbstractHandler implements Handler
         return handler;
     }
 
-    public handle(request: string): string {
+    public abstract handle(request: string): string;
+
+    public handlenext(request: string): string {
         if (this.nextHandler) {
             return this.nextHandler.handle(request);
         }
@@ -41,7 +43,7 @@ class MonkeyHandler extends AbstractHandler {
         if (request === 'Banana') {
             return `Monkey: I'll eat the ${request}.`;
         }
-        return super.handle(request);
+        return super.handlenext(request);
 
     }
 }
@@ -51,7 +53,7 @@ class SquirrelHandler extends AbstractHandler {
         if (request === 'Nut') {
             return `Squirrel: I'll eat the ${request}.`;
         }
-        return super.handle(request);
+        return super.handlenext(request);
     }
 }
 
@@ -60,7 +62,7 @@ class DogHandler extends AbstractHandler {
         if (request === 'MeatBall') {
             return `Dog: I'll eat the ${request}.`;
         }
-        return super.handle(request);
+        return super.handlenext(request);
     }
 }
 
