@@ -1,0 +1,27 @@
+{
+  "name": "typescript-demo",
+  "version": "1.0.0",
+  "description": "https://www.typescriptlang.org/zh/play",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/github50673488/typescript-demo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/github50673488/typescript-demo/issues"
+  },
+  "homepage": "https://github.com/github50673488/typescript-demo#readme",
+  "devDependencies": {
+    "ts-node": "^10.1.0"
+  },
+  "dependencies": {
+    "g": "^2.0.1",
+    "typescript": "^4.3.5"
+  }
+}
