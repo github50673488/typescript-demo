@@ -118,6 +118,7 @@ editor.events.subscribe("save", emailAlerts)
 
 //20210717  以下是 ts 能实际跑起来的 例子
 
+
 interface IPublisher {
     addSubscriber(observer: IObserver): void;
 
@@ -126,6 +127,7 @@ interface IPublisher {
     notify(): void;
 }
 
+// 发布者（Publisher）会向其他对象发送值得关注的事件。事件会在发布者自身状态改变或执行特定行为后发生
 class PublisherA implements IPublisher {
     public state: number;
 
@@ -160,10 +162,12 @@ class PublisherA implements IPublisher {
     }
 }
 
-
+// 订阅者（Subscriber）接口声明了通知接口。 在绝大多数情况下，该接口仅包含一个update更新方法。
 interface IObserver {
     update(publisher: IPublisher): void;
 }
+
+// 可以执行一些操作来回应发布者的通知。 所有具体订阅者类都实现了同样的接口
 
 class ObserverA implements IObserver {
     public update(publisher: IPublisher) {
@@ -181,6 +185,9 @@ class ObserverB implements IObserver {
     }
 }
 
+
+// 客户端（Client）会分别创建发布者和订阅者对象，然后为订阅者注册发布者更
+// 以下是客户端代码
 
 const publisherA = new PublisherA();
 
